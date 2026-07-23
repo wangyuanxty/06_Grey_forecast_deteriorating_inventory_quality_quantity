@@ -1,0 +1,35 @@
+# Claude / IDE config
+.claude/
+CLAUDE.md
+
+# Paper files
+*.pdf
+*.zip
+Grey forecasting modelling for deteriorating inventory with interdependent quality and quantity deca.md/
+
+# Large data files
+FreshRetailNet-50K/
+Retail_Inventory_2024/
+TAMD-Code/
+TAMD_full_data/
+flower_shop_data/
+grey4deterioratinginventory/
+output/figure/
+output/*.pdf
+output/*.png
+output/*.csv
+output/*.npz
+output/*.mat
+data/
+*.parquet
+*.mat
+
+# Python cache
+__pycache__/
+*.pyc
+.egg-info/
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
