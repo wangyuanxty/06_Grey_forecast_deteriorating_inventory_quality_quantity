@@ -1,4 +1,4 @@
-# Grey Forecasting for Deteriorating Inventory — 真实数据验证
+# Grey Forecasting for Deteriorating Inventory — 开放问题探索实验
 
 > 原论文：[*Grey forecasting modelling for deteriorating inventory with interdependent quality and quantity decay*](https://doi.org/10.1016/j.eswa.2025.130956) (ESWA '26)
 >
