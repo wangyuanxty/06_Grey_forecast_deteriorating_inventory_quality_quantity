@@ -1,8 +1,10 @@
 # Grey Forecasting for Deteriorating Inventory — 真实数据验证
 
-> 原论文：*Grey forecasting modelling for deteriorating inventory with interdependent quality and quantity decay* (ESWA '26)
+> 原论文：[*Grey forecasting modelling for deteriorating inventory with interdependent quality and quantity decay*](https://doi.org/10.1016/j.eswa.2025.130956) (ESWA '26)
 >
 > 原仓库：[wangxiaolei0721/grey4deterioratinginventory](https://github.com/wangxiaolei0721/grey4deterioratinginventory)
+>
+> 本仓库：[wangyuanxty/06_Grey_forecast_deteriorating_inventory_quality_quantity](https://github.com/wangyuanxty/06_Grey_forecast_deteriorating_inventory_quality_quantity)
 
 ## 动机
 
@@ -107,7 +109,7 @@ experiment_inventory_injection.py   # 实验二：库存层注入 · 酒类+叮�
 experiment_semisynthetic.py         # 实验二：需求层注入（辅助验证）
 ```
 
-数据：`FreshRetailNet-50K/`（HuggingFace）、`Retail_Inventory_2024/`（Kaggle）。
+数据：`FreshRetailNet-50K/`（[HuggingFace](https://huggingface.co/datasets/Dingdong-Inc/FreshRetailNet-50K)）、`Retail_Inventory_2024/`（[Kaggle](https://www.kaggle.com/datasets/surajs17/retail-sales-inventory-and-purchases-data-2024)）。
 
 ---
 
