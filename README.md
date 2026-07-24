@@ -8,7 +8,7 @@
 
 ## 动机
 
-原论文提出灰色预测建模方法，通过 AGO + 双方程联合回归从库存数据中估计衰减速率 $\lambda$、潜在需求 $\alpha$ 和价格敏感度 $\beta$，进而构建利润优化模型导出最优定价 $p^*$ 和补货周期 $T^*$。
+原论文提出灰色预测建模方法，通过 AGO + 双方程联合回归从库存数据中估计衰减速率 $\lambda$ 、潜在需求 $\alpha$ 和价格敏感度 $\beta$ ，进而构建利润优化模型导出最优定价 $p^*$ 和补货周期 $T^*$ 。
 
 原论文 Section 6 明确提出了三个开放问题：
 
@@ -23,7 +23,7 @@
 
 ## 论文模型
 
-系统方程为 $dI/dt = -\lambda I - d$。需求函数 $d=(\alpha-\beta p)e^{-\lambda t}$。将系统方程积分并用梯形近似处理，得到两个回归方程：
+系统方程为 $dI/dt = -\lambda I - d$ 。需求函数 $d=(\alpha-\beta p)e^{-\lambda t}$ 。将系统方程积分并用梯形近似处理，得到两个回归方程：
 
 $$l_j + d_j = -\lambda \cdot \tfrac{1}{2}(L_j + L_{j-1})\Delta t \qquad
 d_j = \frac{\alpha - \beta p}{\lambda}\bigl[e^{-\lambda t_{j-1}} - e^{-\lambda t_j}\bigr]$$
@@ -34,7 +34,7 @@ d_j = \frac{\alpha - \beta p}{\lambda}\bigl[e^{-\lambda t_{j-1}} - e^{-\lambda t
 
 ## 数据集搜索
 
-模型需要：逐日库存 $I(t)$、逐日销量 $d(t)$、价格变化、产品有明显价值衰减。
+模型需要：逐日库存 $I(t)$ 、逐日销量 $d(t)$ 、价格变化、产品有明显价值衰减。
 
 | 数据集 | I(t) | d(t) | 价格 | 衰减信号 | 规模 | 结论 |
 |--------|------|------|------|---------|------|------|
@@ -52,7 +52,7 @@ d_j = \frac{\alpha - \beta p}{\lambda}\bigl[e^{-\lambda t_{j-1}} - e^{-\lambda t
 
 ## 实验一：论文原版在真实数据上的表现
 
-将 $d = (\alpha-\beta p) \cdot e^{-\lambda t}$ 在叮咚数据上逐产品训练，格点搜索 $\lambda$，OLS 拟合 $\alpha,\beta$。时间 8:2 切分。
+将 $d = (\alpha-\beta p) \cdot e^{-\lambda t}$ 在叮咚数据上逐产品训练，格点搜索 $\lambda$ ，OLS 拟合 $\alpha,\beta$ 。时间 8:2 切分。
 
 ```
 叮咚 169 个产品×门店组合：
