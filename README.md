@@ -8,13 +8,16 @@
 
 ## 动机
 
-原论文提出灰色预测建模方法，通过 AGO + 双方程联合回归从库存数据中估计衰减速率 $\lambda$、潜在需求 $\alpha$ 和价格敏感度 $\beta$，进而构建利润优化模型导出最优定价 $p^*$ 和补货周期 $T^*$。论文在 70 条仿真数据上验证了参数估计精度（$\lambda$ 误差 5.6%，$\alpha$ 误差 2.2%），但数据生成过程和模型共享同一个方程形式。**模型在真实数据上能否运行、核心参数 $\lambda$ 能否被识别——这两个问题论文没有回答。**
+原论文提出灰色预测建模方法，通过 AGO + 双方程联合回归从库存数据中估计衰减速率 $\lambda$、潜在需求 $\alpha$ 和价格敏感度 $\beta$，进而构建利润优化模型导出最优定价 $p^*$ 和补货周期 $T^*$。
 
-本研究围绕三个问题：
+原论文 Section 6 明确提出了三个开放问题：
 
-1. **公开数据里是否存在适合验证该模型的真实数据集？**
-2. **论文的 $e^{-\lambda t}$ 需求衰减假设在真实数据上是否成立？**
-3. **库存方程 (13a)——$\lambda$ 估计的核心——在真实噪声下能否独立识别 $\lambda$？**
+> "Future research will focus on **analyzing the inventory system using real-world datasets**, developing a **tailored grey forecasting modelling approach**, and providing **intelligent decision support** for inventory management."
+
+本研究围绕前两个：
+
+1. **真实数据集验证**：论文仅在 70 条仿真数据上验证（数据生成与模型共享同一方程形式）。在真实数据上模型能否运行、$\lambda$ 能否被识别——这两个问题论文没有回答。
+2. **场景定制的识别条件**：如果模型在真实数据上表现不佳，是因为方法失效还是场景不匹配？$\lambda$ 的检测边界在哪里？什么条件下可以信任估计结果？
 
 ---
 
