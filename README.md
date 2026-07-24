@@ -18,17 +18,12 @@
 
 ## 论文模型
 
-三个方程，三参数 ($\lambda$, $\alpha$, $\beta$)：
+系统方程为 $dI/dt = -\lambda I - d$。需求函数 $d=(\alpha-\beta p)e^{-\lambda t}$。将系统方程积分并用梯形近似处理，得到两个回归方程：
 
-$$ \frac{dI}{dt} = -\lambda I(t) - d(t,p) \tag{1} $$
+$$l_j + d_j = -\lambda \cdot \tfrac{1}{2}(L_j + L_{j-1})\Delta t \qquad
+d_j = \frac{\alpha - \beta p}{\lambda}\bigl[e^{-\lambda t_{j-1}} - e^{-\lambda t_j}\bigr]$$
 
-$$ d(t,p) = (\alpha - \beta p) \cdot e^{-\lambda t} \tag{2} $$
-
-$$ l_j + d_j = -\lambda \cdot \frac{1}{2}(L_j + L_{j-1}) \cdot \Delta t \tag{3} $$
-
-$$ d_j = \frac{\alpha - \beta p}{\lambda}\bigl[e^{-\lambda t_{j-1}} - e^{-\lambda t_j}\bigr] \tag{4} $$
-
-$\lambda$ 同时出现在 (1)(2)(3)(4) 中——物理变质速率、品质衰减速率、库存变化率——论文隐含假设三者是同一个参数。AGO 将差分观测转化为水平值，梯形近似连接离散与连续，(3) 给出 $\lambda$ 的线性初值，IRLS 交替迭代收敛。
+前者关于 $\lambda$ 线性（OLS 一步出初值），后者关于 $\alpha,\beta$ 线性（固定 $\lambda$ 后 OLS）。IRLS 交替迭代收敛——三参数 $(\lambda,\alpha,\beta)$ 从两个方程联合估计。
 
 ---
 
